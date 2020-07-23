@@ -1,0 +1,110 @@
+<form [formGroup]="service" (ngSubmit)=onSubmit(service.value) >
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Readyassist</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://www.readyassist.in">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Towing</a>
+                <a class="dropdown-item" href="#">Breakdown Support</a>
+                <a class="dropdown-item" href="#">Fuel filling</a>
+    
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div>
+        <label class="">service Category</label>
+        <input class="form-control"
+                formControlName="category" type="text">
+                <span class="alert alert-danger" *ngIf="category.invalid && category.touched">
+                  required field
+                </span><br>
+         
+        <label for="servicecode" >Service Code</label>
+        <input class="form-control" 
+         name="servicecode" 
+         placeholder="Enter code..." 
+          type="text" 
+          formControlName="code">
+          <span class="alert alert-danger" *ngIf="code.invalid && code.touched">
+            code required
+          </span>
+         <!-- <div class="alert alert-danger" *ngIf="servicecode.touched && !servicecode.valid">
+          <div *ngIf="servicecode.errors.required">
+           name required
+          </div> -->
+         <br>
+        <span>
+        <label>ClientId :</label>
+        <input class="abc" type="number" formControlName="clientId" >
+        <label>LcationId :</label>
+        <input class="abc" type="number" formControlName="locationId">
+        <label>VehicleId :</label>
+        <input class="abc" type="number" formControlName="vehicleId">
+      </span>
+        </div><br>
+        <div>
+            lead-time :<input type="time" class="ab" formControlName="leadtime">Interval-time :<input type="time" class="ab" formControlName="intervaltime">
+        </div><br>
+        <div class="form-group">
+            <label >Description</label>
+               <input  class="form-control" type="text" formControlName="description">
+            </div><label for="name">Name</label>
+            <input 
+            class="form-control" 
+            name="name"
+             type="text"
+             placeholder="Enter Name..." 
+             formControlName="name">
+          <span class="alert alert-danger" *ngIf="name.invalid && name.touched">Name required</span>
+            <br>
+        <div class="">
+            
+                Day Charge :<input 
+                type="text" 
+                class="form-control"
+                 placeholder="Enter amount..."
+                 formControlName="d_amount" >
+                 <span class="alert alert-danger" *ngIf="d_amount.invalid && d_amount.touched">required feild</span>
+                 <br><br>
+                Night Charge :<input type="text"
+                 class="form-control"
+                  placeholder="Enter amount..."
+                  formControlName="n_amount" >
+                  <span class="alert alert-danger" *ngIf="d_amount.invalid && d_amount.touched">required feild</span>
+                  <br>
+  
+        <br><br>
+            Tax :<input type="number" class="abc" formControlName="tax">
+        
+        </div><br>
+        
+              
+        <div class="">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="display">
+                <label class="form-check-label" for="exampleCheck1">Display to Customer</label>
+            </div><br><button class="btn btn-primary">Submit</button>  
+        </div>
+      </div>
+    </form>
+    
+      
