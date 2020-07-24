@@ -1,32 +1,34 @@
-<body>
+<form [formGroup]='client' (ngSubmit)="Onsubmit(client.value)">
+
     <h1>CLIENT MASTER</h1>
-    
+    <div class="container">
         <div class="form-group">
-            <label for="Name"> Name</label>
+            <label for="Name" class="label" > Name  :</label>
             <input 
             required minlength="3" 
             maxlength="10" 
             ngModel 
             name="Name" 
-            #Name="ngModel" 
-            (change)="log(Name)" 
+            formControlName="name"
             id="Name" 
             type="text" 
             class="form-control">
             <div 
               class="alert alert-danger" 
-              *ngIf="Name.touched && Name.invalid">
-                <div *ngIf="Name.errors.required">
-                     Name is required
+              *ngIf="name.touched && name.invalid">
+                <div *ngIf="name.errors.required">
+                     name is required
                 </div>
-                <div *ngIf="Name.errors.minlength">
+                <div *ngIf="name.errors.minlength">
                     name should be minimum 3 char
                 </div>
                 
     
             </div>
         </div>
-      
-        <button type="submit" class="btn btn-primary">submit</button>
-        
-    </body>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+    </div>
+</form>       
+   
