@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormControlName } from '@angular/forms';
 
 
 @Component({
@@ -8,11 +8,17 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./client-master.component.css']
 })
 export class ClientMasterComponent  {
+client= new FormGroup({
+  name : new FormControl('',Validators.required)
+})
+  
 
-  log(x) {
-    console.log(x);
+  Onsubmit(a){
+    console.log(a);
   }
-
+get name(){
+  return this.client.get("name")
+}
 
 }
 
