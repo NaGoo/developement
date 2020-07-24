@@ -31,20 +31,20 @@
         </div>
       </nav>
       <div>
-        <label class="">service Category</label>
+        <label class="label">Service Category</label>
         <input class="form-control"
                 formControlName="category" type="text">
                 <span class="alert alert-danger" *ngIf="category.invalid && category.touched">
                   required field
                 </span><br>
          
-        <label for="servicecode" >Service Code</label>
+        <label class="label" >Service Code</label>
         <input class="form-control" 
          name="servicecode" 
          placeholder="Enter code..." 
           type="text" 
-          formControlName="code">
-          <span class="alert alert-danger" *ngIf="code.invalid && code.touched">
+          formControlName="serviceCode">
+          <span class="alert alert-danger" *ngIf="serviceCode.invalid && serviceCode.touched">
             code required
           </span>
          <!-- <div class="alert alert-danger" *ngIf="servicecode.touched && !servicecode.valid">
@@ -53,21 +53,21 @@
           </div> -->
          <br>
         <span>
-        <label>ClientId :</label>
+        <label class="label">ClientId :</label>
         <input class="abc" type="number" formControlName="clientId" >
-        <label>LcationId :</label>
+        <label class="label">LcationId :</label>
         <input class="abc" type="number" formControlName="locationId">
-        <label>VehicleId :</label>
+        <label class="label">VehicleId :</label>
         <input class="abc" type="number" formControlName="vehicleId">
       </span>
         </div><br>
         <div>
-            lead-time :<input type="time" class="ab" formControlName="leadtime">Interval-time :<input type="time" class="ab" formControlName="intervaltime">
+           <label class="label">Lead-time :</label> <input type="time" class="ab" formControlName="leadTime"><label class="label">Interval-time :</label> <input type="time" class="ab" formControlName="intervalTime">
         </div><br>
         <div class="form-group">
-            <label >Description</label>
-               <input  class="form-control" type="text" formControlName="description">
-            </div><label for="name">Name</label>
+            <label class="label" >Description</label>
+               <input  class="form-control" type="text"  formControlName="description">
+            </div><label for="name" class="label">Name</label>
             <input 
             class="form-control" 
             name="name"
@@ -78,29 +78,30 @@
             <br>
         <div class="">
             
-                Day Charge :<input 
+               <label class="label">Day Charge</label> 
+               <input 
                 type="text" 
                 class="form-control"
                  placeholder="Enter amount..."
-                 formControlName="d_amount" >
-                 <span class="alert alert-danger" *ngIf="d_amount.invalid && d_amount.touched">required feild</span>
+                 formControlName="dayCharge" >
+                 <span class="alert alert-danger" *ngIf="dayCharge.invalid && dayCharge.touched">required feild</span>
                  <br><br>
-                Night Charge :<input type="text"
+              <label class="label">Night Charge</label><input type="text"
                  class="form-control"
                   placeholder="Enter amount..."
-                  formControlName="n_amount" >
-                  <span class="alert alert-danger" *ngIf="d_amount.invalid && d_amount.touched">required feild</span>
+                  formControlName="nightCharge" >
+                  <span class="alert alert-danger" *ngIf="nightCharge.invalid && nightCharge.touched">required feild</span>
                   <br>
   
         <br><br>
-            Tax :<input type="number" class="abc" formControlName="tax">
+            <label class="label">Tax :</label><input type="number" class="abc" formControlName="tax">
         
         </div><br>
         
               
         <div class="">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="display">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="displayToCustomer">
                 <label class="form-check-label" for="exampleCheck1">Display to Customer</label>
             </div><br><button class="btn btn-primary">Submit</button>  
         </div>
